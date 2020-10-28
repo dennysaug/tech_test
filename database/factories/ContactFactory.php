@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Contact::class, function (Faker $faker) {
     return [
-        'company_id' => factory(App\Company::class),
+//        'company_id' => factory(App\Company::class),
         'name' => $faker->name,
-        'phone' => substr($faker->phoneNumber,0,14)
+        'phone' => $faker->e164PhoneNumber
     ];
 });

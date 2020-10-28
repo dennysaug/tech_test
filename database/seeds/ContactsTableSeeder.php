@@ -11,6 +11,12 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
-        $contacts = factory(App\Contact::class, 10)->create();
+        $contacts = factory(App\Contact::class)
+            ->create()
+            ->each(function ($contact) {
+                $contact->notes()->createMany(
+                    factory(\App\Note::class,2)->make()->toArray()
+                );
+            });
     }
 }

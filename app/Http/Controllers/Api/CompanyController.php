@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Company;
 use App\Contact;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
@@ -33,5 +32,16 @@ class CompanyController extends Controller
     public function index()
     {
         return Company::orderBy('id','desc')->get();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Company  $company
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Company $company)
+    {
+        return [$company,'contacts' => $company->contacts];
     }
 }

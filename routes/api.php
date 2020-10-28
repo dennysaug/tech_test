@@ -20,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('contact', 'Api\ContactController');
 
 Route::apiResource('company', 'Api\CompanyController')->only(['index','show']);
+
 Route::get('company/search/{name}', [
     'as' => 'company.search',
     'uses' => 'Api\CompanyController@search'
 ]);
+
+Route::apiResource('note', 'Api\NoteController')->only(['store']);

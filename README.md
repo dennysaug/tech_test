@@ -1,4 +1,4 @@
-####Tested on Linux
+##Tested on Linux
 
 If you want run it on docker:
 
@@ -21,17 +21,17 @@ _[1]_
 
 var: company_id (int), name (string), phone (string)
 
-POST localhost/api/contact
+**POST** localhost/api/contact
 
-PUT localhost/api/contact/35
+**PUT** localhost/api/contact/6
 
 _[2]_
 
-???????????????????????????????
+**GET** localhost/api/contact
 
 _[3]_
 
-GET localhost/api/contact/37
+**GET** localhost/api/contact/37
 
 _[4]_
 
@@ -41,19 +41,19 @@ _[5]_
 
 var: contact_id (int), text (string)
 
-POST localhost/api/note
+**POST** localhost/api/note
 
 _[6]_
 
-GET localhost/api/company/67
+**GET** localhost/api/company/67
 
 _[7]_
 
-GET localhost/api/company
+**GET** localhost/api/company
 
 _[8]_
 
-GET localhost/api/company/search/em
+**GET** localhost/api/company/search/em
 
-#Postman Collections
+##Postman Collections
 https://www.getpostman.com/collections/f6d9c8de14346760a68b

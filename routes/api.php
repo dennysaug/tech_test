@@ -27,3 +27,6 @@ Route::get('company/search/{name}', [
 ]);
 
 Route::apiResource('note', 'Api\NoteController')->only(['store']);
+
+Route::get('api_token', 'Api\ApiTokenController@update');
+

@@ -17,6 +17,7 @@ class TruncateTableSeeder extends Seeder
         DB::statement('TRUNCATE notes');
         DB::statement('TRUNCATE contacts');
         DB::statement('TRUNCATE companies');
+        DB::statement('TRUNCATE users');
         DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

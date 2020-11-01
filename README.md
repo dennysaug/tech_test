@@ -25,6 +25,7 @@ else:
 _[Auth]_
 
 var: email (string), password (string)
+        
         dennysaug@gmail.com : root
 
 POST localhost/api/auth/login
@@ -36,7 +37,10 @@ GET localhost/api/auth/refresh
 GET localhost/api/auth/logout
 
 
-POST
+HEADERS:
+
+Authorization : bearer <token>
+
 
 _[1]_
 

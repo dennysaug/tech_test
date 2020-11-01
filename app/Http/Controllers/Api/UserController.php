@@ -15,15 +15,9 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $input = [
-            'email' => 'dennysaug@gmail.com',
-            'password' => 'root'
+        return [
+            'msg' => 'You need inform credentials'
         ];
-
-        $user = User::where('email', '=', $input['email'])->first();
-
-        return $user;
-
     }
 
 }

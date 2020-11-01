@@ -17,16 +17,37 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('contact', 'Api\ContactController');
+Route::middleware('auth:api')->group(function() {
 
-Route::apiResource('company', 'Api\CompanyController')->only(['index','show']);
+    Route::apiResource('contact', 'Api\ContactController')->except(['destroy']);
 
-Route::get('company/search/{name}', [
-    'as' => 'company.search',
-    'uses' => 'Api\CompanyController@search'
-]);
+    Route::apiResource('company', 'Api\CompanyController')->only(['index','show']);
 
-Route::apiResource('note', 'Api\NoteController')->only(['store']);
+    Route::get('company/search/{name}', [
+        'as' => 'company.search',
+        'uses' => 'Api\CompanyController@search'
+    ]);
 
-Route::get('api_token', 'Api\ApiTokenController@update');
+    Route::apiResource('note', 'Api\NoteController')->only(['store']);
 
+});
+
+
+
+
+
+Route::group([
+
+    'middleware' => 'api',
+//    'namespace' => 'App\Http\Controllers',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::get('login', 'Api\AuthController@login')->name('login');
+    Route::post('login', 'Api\AuthController@login');
+    Route::get('logout', 'Api\AuthController@logout');
+    Route::get('refresh', 'Api\AuthController@refresh');
+    Route::get('me', 'Api\AuthController@me');
+
+});

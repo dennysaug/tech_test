@@ -21,6 +21,7 @@ if [ "$INSTALL_VENDOR" = "y" ]; then
     if [ "$(cat .env | grep -w 'APP_KEY=' | cut -d = -f 1)" = APP_KEY ]; then
         composer update && \
         php artisan key:generate && \
+        php artisan jwt:secret && \
         useradd "$USER" -d /home/"$USER" -m
     fi
 fi

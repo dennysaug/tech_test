@@ -2,6 +2,11 @@
 
 If you want run it on docker:
 
+_Docker version 18.06.1-ce, build e68fc7a_
+
+_docker-compose version 1.8.0, build unknown_
+
+
     docker-compose up --build
     
     open a new terminal and type: docker exec -it php
@@ -16,6 +21,22 @@ else:
     
     
 ##Endpoints:
+
+_[Auth]_
+
+var: email (string), password (string)
+        dennysaug@gmail.com : root
+
+POST localhost/api/auth/login
+
+GET localhost/api/auth/me
+
+GET localhost/api/auth/refresh
+
+GET localhost/api/auth/logout
+
+
+POST
 
 _[1]_
 

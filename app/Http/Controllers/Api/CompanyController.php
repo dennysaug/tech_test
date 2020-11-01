@@ -42,6 +42,6 @@ class CompanyController extends Controller
      */
     public function show(Company $company)
     {
-        return [$company,'contacts' => $company->contacts];
+        return Company::with('contacts')->find($company);
     }
 }

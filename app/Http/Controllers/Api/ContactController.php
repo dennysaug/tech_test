@@ -16,7 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return Contact::orderBy('id','desc')->paginate(2);
+        return Contact::orderBy('id','desc')->with('notes')->paginate(3);
     }
 
     /**

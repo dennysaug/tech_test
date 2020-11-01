@@ -39,7 +39,7 @@ GET localhost/api/auth/logout
 
 HEADERS:
 
-Authorization : bearer <token>
+Authorization : bearer access_token 
 
 
 _[1]_

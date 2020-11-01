@@ -28,16 +28,16 @@ var: email (string), password (string)
         
         dennysaug@gmail.com : root
 
-POST localhost/api/auth/login
+**POST** localhost/api/auth/login
 
-GET localhost/api/auth/me
+**GET** localhost/api/auth/me
 
-GET localhost/api/auth/refresh
+**GET** localhost/api/auth/refresh
 
-GET localhost/api/auth/logout
+**GET** localhost/api/auth/logout
 
 
-HEADERS:
+**HEADERS:**
 
 Authorization : bearer access_token 
 
